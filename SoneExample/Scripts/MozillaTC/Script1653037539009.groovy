@@ -16,12 +16,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.Cookie as Cookie
+import org.openqa.selenium.WebDriver as WebDriver
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 Windows.startApplicationWithTitle('C:\\Program Files\\Mozilla Firefox\\firefox.exe', '')
-
-Windows.click(findWindowsObject('Mozilla/searchInstagram'))
-
-Windows.setText(findWindowsObject('Mozilla/searchInstagram'), 'instagram')
 
 Windows.click(findWindowsObject('Object Repository/Mozilla/amazon'))
 
@@ -32,4 +31,20 @@ Windows.click(findWindowsObject('Mozilla/accessoriPerComputer'))
 Windows.click(findWindowsObject('Mozilla/cercaBTN'))
 
 Windows.setText(findWindowsObject('Mozilla/CercaTutto'), 'apple')
+
+Windows.sendKeys(findWindowsObject('Object Repository/Mozilla/CercaTutto'), Keys.chord(Keys.ENTER))
+
+Windows.delay(2)
+
+Windows.comment('open new tab')
+
+Windows.click(findWindowsObject('Object Repository/Mozilla/openNewTab'))
+
+Windows.click(findWindowsObject('Mozilla/searchInstagram'))
+
+Windows.setText(findWindowsObject('Object Repository/Mozilla/setInstagram'), 'instagram')
+
+Windows.sendKeys(findWindowsObject('Mozilla/searchInstagram'), Keys.chord(Keys.ENTER))
+
+Windows.switchToApplication(FailureHandling.STOP_ON_FAILURE)
 
