@@ -24,7 +24,7 @@ Windows.startApplicationWithTitle('C:\\Program Files\\Mozilla Firefox\\firefox.e
 
 Windows.click(findWindowsObject('Object Repository/Mozilla/amazon'))
 
-Windows.click(findWindowsObject('Object Repository/Mozilla/amazonBasics'))
+Windows.click(findWindowsObject('Object Repository/Mozilla/amazonBasiccs'))
 
 Windows.click(findWindowsObject('Mozilla/accessoriPerComputer'))
 
@@ -46,5 +46,13 @@ Windows.setText(findWindowsObject('Object Repository/Mozilla/setInstagram'), 'in
 
 Windows.sendKeys(findWindowsObject('Mozilla/searchInstagram'), Keys.chord(Keys.ENTER))
 
-Windows.switchToApplication(FailureHandling.STOP_ON_FAILURE)
+if (Windows.verifyElementPresent(findWindowsObject('Object Repository/Mozilla/lokkingForEng'), 2, FailureHandling.OPTIONAL)) {
+    Windows.click(findWindowsObject('Object Repository/Mozilla/XClose'))
+} else if (Windows.verifyElementNotPresent(findWindowsObject('Object Repository/Mozilla/lokkingForEng'), 3)) {
+    Windows.comment('Cookies not appear')
+}
+
+Windows.clearText(findWindowsObject('Object Repository/Mozilla/InstagramClear'))
+
+Windows.delay(2)
 

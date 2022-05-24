@@ -3,7 +3,8 @@
    <description></description>
    <name>amazonBasics</name>
    <tag></tag>
-   <locator>//Window/Custom[1]/Pane[1]/Document[1]/Group[1]/Group[1]/HyperLink[9]</locator>
+   <locator>//Window/Custom[1]/Pane[1]/Document[1]/Group[1]/Group[1]/HyperLink[7]
+</locator>
    <locatorStrategy>XPATH</locatorStrategy>
    <properties>
       <isSelected>false</isSelected>
